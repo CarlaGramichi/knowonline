@@ -17,12 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('/vtex/list', 'VtexController@sync' ); //Endpoint para obtener el listado de ordenes
-Route::get('/vtex/orders', 'VtexController@orders' ); //Endpoint para obtener una orden
-Route::get('/vtex/store', 'VtexController@storeOrders' ); //Endpoint para almacenar las ordenes en la DB.
+//** Endpoint para obtener el listado de ordenes **//
+Route::get('/vtex/list', 'VtexController@sync' );
 
-//Route::get('/orders', function (){
-//    return 'Ordenes';
-//});
+//** Endpoint para obtener una orden **//
+Route::get('/vtex/orders', 'VtexController@orders' );
 
-//Route::apiResource('orders', 'OrderController');
+//**  Endpoint para almacenar las ordenes en la DB. **//
+Route::get('/vtex/store', 'VtexController@storeOrders' );

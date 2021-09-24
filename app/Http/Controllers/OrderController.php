@@ -15,9 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
-        return $orders;
-
+    //
     }
 
     /**
@@ -28,12 +26,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $order = new Order();
-        $order->orderId = $request->orderId;
-
-        $order->save();
-
-
+        //
     }
 
     /**

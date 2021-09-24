@@ -57,16 +57,14 @@ class VtexController extends Controller
     public function storeOrders(){
         $orders = $this->orders();
         foreach($orders as $order){
-            $client = Client::create([
-                'client_id' => $order['clientProfileData']['id'],
-                'client_first_name' => $order['clientProfileData']['firstName'],
-                'client_last_name' => $order['clientProfileData']['lastName'],
-                'client_email' => $order['clientProfileData']['email']
-            ]);
-//            dd($order['items']);
-
-
-
+            if(!(Client::where('client_email',$order['clientProfileData']['email'])->exists())){
+                    Client::create([
+                    'client_id' => $order['clientProfileData']['id'],
+                    'client_first_name' => $order['clientProfileData']['firstName'],
+                    'client_last_name' => $order['clientProfileData']['lastName'],
+                    'client_email' => $order['clientProfileData']['email']
+                ]);
+            }
 
             $order_new = Order::create([
                 'order_id' => $order['orderId'],
