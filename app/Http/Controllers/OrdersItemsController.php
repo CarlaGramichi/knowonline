@@ -2,22 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\OrdersItems;
 use Illuminate\Http\Request;
-use App\Order;
 
-class OrderController extends Controller
+class OrdersItemsController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
-     * @return Order[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $orders = Order::all();
-        return $orders;
+        //
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -28,21 +35,27 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $order = new Order();
-        $order->orderId = $request->orderId;
-
-        $order->save();
-
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\OrdersItems  $ordersItems
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(OrdersItems $ordersItems)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\OrdersItems  $ordersItems
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(OrdersItems $ordersItems)
     {
         //
     }
@@ -51,10 +64,10 @@ class OrderController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\OrdersItems  $ordersItems
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, OrdersItems $ordersItems)
     {
         //
     }
@@ -62,10 +75,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\OrdersItems  $ordersItems
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(OrdersItems $ordersItems)
     {
         //
     }
